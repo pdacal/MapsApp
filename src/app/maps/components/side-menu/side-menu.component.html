@@ -1,0 +1,11 @@
+<ul class="list-group">
+  <!-- [item.route] -> sen [] teriamos que ponher o string ca ruta -->
+  <li
+    *ngFor="let item of menuItems"
+    class="list-group-item"
+    [routerLink]="[item.route]"
+    routerLinkActive="active"
+    >
+    {{ item.name }}
+  </li>
+</ul>
