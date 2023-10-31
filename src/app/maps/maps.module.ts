@@ -1,32 +1,35 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
 import * as mapboxgl from 'mapbox-gl';// se da erro ao ponhelo -> npm i --save-dev @types/mapbox-gl
 (mapboxgl as any).accessToken = 'pk.eyJ1IjoicGRhY2FsIiwiYSI6ImNsb2NtNzJmYTEya3kya3BjbjZjZzE1ZW0ifQ.NYajfhmBOLmHUvlI2qObpg';
 
-import { MapsRoutingModule } from './maps-routing.module';
-import { MiniMapComponent } from './components/mini-map/mini-map.component';
-import { SideMenuComponent } from './components/side-menu/side-menu.component';
-import { MapsLayoutComponent } from './layout/maps-layout/maps-layout.component';
+import { CounterAloneComponent } from '../alone/components/counter-alone/counter-alone.component';
 import { FullScreenPageComponent } from './pages/full-screen-page/full-screen-page.component';
+import { MapsLayoutComponent } from './layout/maps-layout/maps-layout.component';
+import { MapsRoutingModule } from './maps-routing.module';
 import { MarkersPageComponent } from './pages/markers-page/markers-page.component';
+import { MiniMapComponent } from './components/mini-map/mini-map.component';
 import { PropertiesPageComponent } from './pages/properties-page/properties-page.component';
+import { SideMenuComponent } from '../alone/components/side-menu/side-menu.component';
 import { ZoomRangePageComponent } from './pages/zoom-range-page/zoom-range-page.component';
 
 
 @NgModule({
   declarations: [
-    MiniMapComponent,
-    SideMenuComponent,
-    MapsLayoutComponent,
     FullScreenPageComponent,
+    MapsLayoutComponent,
     MarkersPageComponent,
+    MiniMapComponent,
     PropertiesPageComponent,
     ZoomRangePageComponent,
   ],
   imports: [
+    //importar Standalone components eiqui
     CommonModule,
-    MapsRoutingModule
+    CounterAloneComponent,
+    MapsRoutingModule,
+    SideMenuComponent,
   ]
 })
 export class MapsModule { }
